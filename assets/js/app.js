@@ -223,8 +223,10 @@ window.btoa = window.btoa || function () {
 
         eventData = {
           event: "wizard" + ((nextStep === 3) ? "Success" : "Step" + nextStep) + "Loaded",
-          formStatus: "filled"
+          formStatus: "filled",
         };
+        
+        if (nextStep != NaN) eventData.formStep = nextStep;
 
         console.log("Pushing to Data Layer: " + JSON.stringify(eventData, null, 2));
         window[window.dataLayerName].push(eventData);  
