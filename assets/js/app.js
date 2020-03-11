@@ -227,7 +227,7 @@ window.btoa = window.btoa || function () {
           formStatus: "filled",
         };
         
-        if (nextStep != NaN) eventData.formStep = nextStep;
+        if (nextStep != NaN) eventData.formStep = nextStep.toString();
 
         console.log("Pushing to Data Layer: " + JSON.stringify(eventData, null, 2));
         window[window.dataLayerName].push(eventData);  
